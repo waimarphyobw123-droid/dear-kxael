@@ -1,0 +1,320 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    min-height: 100vh;
+    background: #fffdfd;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* MAIN CONTAINER */
+.container {
+    width: 100%;
+    max-width: 430px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 30px 20px;
+    background: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(255, 160, 190, 0.12);
+    animation: appear 1s ease;
+}
+
+/* TEDDY BEAR CHARACTER */
+.character {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 10px;
+}
+
+.teddy {
+    font-size: 100px;
+    animation: teddyBounce 2s ease-in-out infinite;
+}
+
+.character-shadow {
+    width: 70px;
+    height: 12px;
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
+    animation: shadowPulse 2s ease-in-out infinite;
+}
+
+/* SPARKLE */
+.sparkle {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+/* HEADINGS */
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 36px;
+    color: #ff80a8;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #555;
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* BUTTON AREA */
+.button-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    min-height: 60px;
+    position: relative;
+}
+
+/* ALL BUTTONS */
+button {
+    border: none;
+    border-radius: 12px;
+    padding: 13px 30px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+/* YES BUTTON */
+#yesBtn {
+    background: #70d69a;
+    color: white;
+    box-shadow: 0 5px 12px #70d69a55;
+}
+
+#yesBtn:hover {
+    background: #42bd78;
+    transform: scale(1.1);
+}
+
+/* NO BUTTON */
+#noBtn {
+    background: #ffb17c;
+    color: white;
+    box-shadow: 0 5px 12px #ffb17c55;
+    z-index: 5;
+}
+
+/* LETTER BUTTON */
+#letterBtn {
+    display: block;
+    margin: 25px auto 0;
+    background: #ffe6ef;
+    color: #e56b96;
+    font-size: 13px;
+}
+
+#letterBtn:hover {
+    background: #ffd3e2;
+}
+
+/* FOOTER */
+.footer {
+    color: #bbb;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+/* FLOATING HEARTS */
+.floating-hearts {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -40px;
+    animation: floatUp linear forwards;
+    color: #ff9cba;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ANIMATIONS */
+@keyframes teddyBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes shadowPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(0.7);
+        opacity: 0.2;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* POPUP */
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 190, 210, 0.5);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 20;
+}
+
+.overlay.show {
+    display: flex;
+}
+
+.popup {
+    background: white;
+    width: 100%;
+    max-width: 350px;
+    padding: 35px 25px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 40px #eaa0ba44;
+    animation: appear 0.5s ease;
+}
+
+.popup-character {
+    font-size: 65px;
+    margin-bottom: 10px;
+}
+
+.popup h1 {
+    font-size: 32px;
+}
+
+.popup p {
+    color: #777;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.close-btn {
+    background: #ff91b5;
+    color: white;
+    margin-top: 15px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 15px;
+    }
+
+    .teddy {
+        font-size: 85px;
+    }
+
+    h1 {
+        font-size: 31px;
+    }
+
+    h2 {
+        font-size: 17px;
+    }
+}
+
+/* TEDDY WAVING HAND ANIMATION */
+.teddy {
+    position: relative;
+    display: inline-block;
+    font-size: 100px;
+    animation: teddyBounce 2s ease-in-out infinite;
+}
+
+.teddy-hand {
+    display: inline-block;
+    font-size: 35px;
+    position: absolute;
+    top: 5px;
+    right: -25px;
+    transform-origin: bottom center;
+    animation: handWave 1s ease-in-out infinite;
+}
+
+@keyframes handWave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(25deg);
+    }
+
+    50% {
+        transform: rotate(-15deg);
+    }
+
+    75% {
+        transform: rotate(25deg);
+    }
+}
+/* FADE IN MESSAGE ANIMATION */
+.fade-message {
+    animation: fadeMessage 0.8s ease forwards;
+}
+
+@keyframes fadeMessage {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
